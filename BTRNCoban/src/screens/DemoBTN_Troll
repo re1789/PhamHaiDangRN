@@ -1,0 +1,59 @@
+import React, { useState } from 'react'
+import { View, Text, Pressable, StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
+export default function DemoBtn() {
+  const [position, setPosition] = useState({
+    top: 100,
+    left: 100,
+  })
+
+  const moveButton = () => {
+    const randomTop = Math.floor(Math.random() * 400)
+    const randomLeft = Math.floor(Math.random() * 300)
+
+    setPosition({
+      top: randomTop,
+      left: randomLeft,
+    })
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>DemoBtn</Text>
+
+      <Pressable
+        onMouseEnter={moveButton}
+        onPress={() => alert('You pressed the button')}
+        style={[
+          styles.button,
+          {
+            top: position.top,
+            left: position.left,
+          },
+        ]}
+      >
+        <Text style={styles.buttonText}>Click here</Text>
+      </Pressable>
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+
+  button: {
+    position: 'absolute',
+    backgroundColor: '#2196F3',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+})
