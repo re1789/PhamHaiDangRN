@@ -6,15 +6,18 @@ import BTFlexbox2 from './src/screens/BTFlexbox2';
 import AdidasImage from './src/screens/AdidasImage';
 import DemoBtn from './src/screens/DemoBtn';
 import CountPressed from './src/screens/CountPressed';
-import BanHang from './src/BanHang';
+import BanHang from './src/Free_to_create/BanHang';
 import Tong from './src/screens/Tong';
 import Tongtong from './src/screens/tongtong';
 import DS34Tinh from './src/screens/DS34Tinh';
+import Ship from './src/screens/Ship';
+import DemoMap from './src/screens/DemoMap';
+import BaiKT from './src/screens/BaiKT';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <DS34Tinh></DS34Tinh>
+      <BaiKT/>
     </SafeAreaProvider>
   );
 }

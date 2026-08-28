@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { TextInput } from 'react-native'
 import { Button } from 'react-native'
 import { StyleSheet } from 'react-native'
-import { event } from 'react-native/types_generated/Libraries/Animated/AnimatedExports'
 
 export default function Tongtong() {
     const[a, setA] = useState('')
