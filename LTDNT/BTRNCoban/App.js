@@ -13,11 +13,15 @@ import DS34Tinh from './src/screens/DS34Tinh';
 import Ship from './src/screens/Ship';
 import DemoMap from './src/screens/DemoMap';
 import BaiKT from './src/screens/BaiKT';
+import DemoFlatlist from './src/screens/DemoFlatlist';
+import Appbar from './src/Compoments/Appbar';
+import Avatars from './src/Compoments/Avatars';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <BaiKT/>
+      <Appbar/>
+      <Avatars/>
     </SafeAreaProvider>
   );
 }
