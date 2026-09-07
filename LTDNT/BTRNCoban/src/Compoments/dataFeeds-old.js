@@ -49,8 +49,10 @@ export default function dataFeeds() {
             data={dataFeeds}
             renderItem={({ item, index, separator }) => {
                 return <SafeAreaView>
-                    <image source={{ uri: item.image }} style={{ width: 50, height: 50 }} />
+                    <Image source={{ uri: item.image }} style={styles.img} />
+                    <Text>{item.title}</Text>
                     <Text>{item.name}</Text>
+                    <Text>{item.time}</Text>
                     <Text>{item.content}</Text>
                 </SafeAreaView>
             }}
@@ -104,3 +106,4 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+})
