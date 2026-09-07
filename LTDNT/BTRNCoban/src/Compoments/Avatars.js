@@ -1,64 +1,25 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
-
-export const dataAvatars = [
-    {
-        name: 'Sahara',
-        image: 'https://i.pravatar.cc/150?img=1',
-    },
-    {
-        name: 'Sophia',
-        image: 'https://i.pravatar.cc/150?img=2',
-    },
-    {
-        name: 'Hana',
-        image: 'https://i.pravatar.cc/150?img=3',
-    },
-    {
-        name: 'Naul',
-        image: 'https://i.pravatar.cc/150?img=4',
-    },
-    {
-        name: 'Kimihana',
-        image: 'https://i.pravatar.cc/150?img=5',
-    },
-    {
-        name: 'Yoko',
-        image: 'https://i.pravatar.cc/150?img=6',
-    },
-    {
-        name: 'Su',
-        image: 'https://i.pravatar.cc/150?img=7',
-    },
-    {
-        name: 'Finnia',
-        image: 'https://i.pravatar.cc/150?img=8',
-    },
-    {
-        name: 'Subana',
-        image: 'https://i.pravatar.cc/150?img=9',
-    },
-    {
-        name: 'Corohe',
-        image: 'https://i.pravatar.cc/150?img=10',
-    }
-]
+import { dataAvatars } from '../../NewFeed/data_feed';
 
 export default function Avatars() {
-  const renderItem = ({ item }) => (
-    <View style={styles.storyItem}>
-      <Image source={{ uri: item.image }} style={styles.avatar} />
-      <Text style={styles.name} numberOfLines={1}>{item.name}</Text>
-    </View>
-  );
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.img}>
+        <Image source={{ uri: item.image }} style={styles.avatar} />
+        <Text style={styles.name}>{item.name}</Text>
+      </View>
+    );
+  };
 
   return (
     <View style={styles.container}>
       <FlatList
         data={dataAvatars}
-        keyExtractor={(item, index) => item.name + index.toString()}
-        renderItem={renderStoryItem}
-        contentContainerStyle={styles.listContent}
+        keyExtractor={(item, index) =>{
+           return index.toString()
+        }}
+        renderItem={renderItem}
         horizontal
       />
     </View>
@@ -67,28 +28,22 @@ export default function Avatars() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    paddingVertical: 12,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: '#F0F0F0',
+    justifyContent: 'center',
+    margin: 10,
   },
-  listContent: {
-    paddingHorizontal: 10,
-  },
-  storyItem: {
+  img: {
     alignItems: 'center',
     marginHorizontal: 8,
-    width: 60,
+    width: 150,
   },
   avatar: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    marginBottom: 6,
+    width: 100,
+    height: 100,
+    borderRadius:20,
   },
   name: {
-    fontSize: 12,
+    fontSize: 16,
+    fontWeight: '500',
     color: '#000',
     textAlign: 'center',
   },

@@ -7,7 +7,7 @@ export default function Appbar() {
 
     <View style={styles.AppbarContainer}>
       {/* Camera icon ho ho ho */}
-      <TouchableOpacity activeOpacity={0.7}>
+      <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
         <FontAwesome
           name="camera"
           size={24}
@@ -17,10 +17,10 @@ export default function Appbar() {
       </TouchableOpacity>
 
       {/* Tiêu đề hẹ hẹ hẹ */}
-      <Text style={styles.headerTitle}>Feed</Text>
+      <Text style={styles.text}>Feed</Text>
     
       {/* Edit icon ho ho ho */}
-      <TouchableOpacity activeOpacity={0.7}>
+      <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
         <FontAwesome
           name="edit"
           size={24}
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
   },
-  headerTitle: {
-    fontSize: 18,
+  text: {
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#000000',
   },
