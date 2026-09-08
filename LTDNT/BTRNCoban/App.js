@@ -1,16 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Appbar from './src/Compoments/Appbar';
-import Avatars from './src/Compoments/Avatars';
-import Content from './src/Compoments/Content';
+import NewFeed from './src/screens/NewFeed';
+import ListFind from './src/Bai_tap_4/ListFind';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Appbar/>
-      <Avatars/>
-      <Content/>
+      <ListFind/>
     </SafeAreaProvider>
   );
 }
