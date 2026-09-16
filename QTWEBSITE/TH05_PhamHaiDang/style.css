@@ -1,7 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 16px;
+}
 .container{
-    border: 1px solid black;
-    width: 600px;
+    border: 1px solid rgb(43, 56, 233);
+    width: min(600px, 100%);
     margin: 0 auto;
+    overflow: hidden;
 }
 .header{
     color: white;
@@ -11,7 +19,17 @@
     text-align: center;
 }
 .content{
-    margin-left: 15%;
+    margin-left: 0;
+}
+table{
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+td, th{
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 td{
     padding: 10px;
@@ -21,7 +39,7 @@ td{
     border: 0 solid;
     padding: 10px;
     border-radius: 15px;
-    background-color: gray;
+    background-color: rgb(92, 92, 92);
     color: white;
 }
 .btn:hover{
@@ -30,7 +48,14 @@ td{
 .btn:active{
     background-color: turquoise;
 }
-input{
-    width: 250px;
+input, textarea{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 25px;
+}
+textarea{
+    height: auto;
+    resize: vertical;
 }
