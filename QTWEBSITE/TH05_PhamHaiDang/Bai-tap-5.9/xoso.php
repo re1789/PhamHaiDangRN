@@ -106,19 +106,6 @@
         </table>
         </div>
     </form>
-    <script>
-        const oDaySo = document.getElementById('day-so');
 
-        oDaySo.addEventListener('input', function () {
-            const cacChuSo = this.value.replace(/\D/g, '').slice(0, 20);
-            const cacSo = [];
-
-            for (let i = 0; i < cacChuSo.length; i += 2) {
-                cacSo.push(cacChuSo.slice(i, i + 2));
-            }
-
-            this.value = cacSo.join('-');
-        });
-    </script>
 </body>
 </html>
