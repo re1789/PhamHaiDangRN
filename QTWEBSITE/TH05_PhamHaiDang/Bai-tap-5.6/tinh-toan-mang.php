@@ -10,24 +10,20 @@
     <?php
         $n = "";
         $mang =[];
-        $soNgauNhien = rand(0, 20);
         $max = "";
         $min = "";
         $tong = "";
         if(isset($_POST['okay'])){
-            $n = $_POST['txt'] ?? '';
+            $n = (int)($_POST['txt'] ?? 0);
             if($n > 0){
-                $mang = array();
+                $mang = [];
                 for ($i = 0; $i < $n; $i++){
-                    $soNgauNhien;
+                    $mang[] = rand(0, 20);
                 }
                 $max = max($mang);
                 $min = min($mang);
                 $tong = array_sum($mang);
             }
-
-            $mang = array_map('trim', explode(',', $n));
-            $mang = array_values(array_filter($mang, fn($value) => $value !== ''));
         }
     ?>
     <form action="" method="post">
@@ -50,15 +46,15 @@
                 </tr>
                 <tr>
                     <td><p>GTLN (MAX) trong mảng:</p></td>
-                    <td><input type="text" name="max" disabled="disabled" value="<?php htmlspecialchars($max) ?>"></td>
+                    <td><input type="text" name="max" disabled="disabled" value="<?php echo htmlspecialchars((string)$max) ?>"></td>
                 </tr>
                 <tr>
                     <td>GTNN (MIN) trong mảng:</td>
-                    <td><input type="text" name="min" disabled="disabled" value="<?php htmlspecialchars($min) ?>"></td>
+                    <td><input type="text" name="min" disabled="disabled" value="<?php echo htmlspecialchars((string)$min) ?>"></td>
                 </tr>
                 <tr>
                     <td>Tổng mảng:</td>
-                    <td><input type="text" disabled="disabled" value="<?php htmlspecialchars($tong) ?>"></td>
+                    <td><input type="text" disabled="disabled" value="<?php echo htmlspecialchars((string)$tong) ?>"></td>
                 </tr>
             </table>
         </div>

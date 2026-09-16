@@ -14,7 +14,7 @@
 
         if (isset($_POST['okay'])) {
             $txt = $_POST['txt'] ?? '';
-            $find = $_POST['find'] ?? '';
+            $find = trim($_POST['find'] ?? '');
             $mang = array_map('trim', explode(',', $txt));
             $mang = array_values(array_filter($mang, fn($value) => $value !== ''));
 
@@ -23,11 +23,11 @@
                 $kq = 'Tìm thấy ' . $find . ' tại vị trí thứ ' . ($vitri + 1) .  ' trong mảng';
             }
             else{
-                $kq = 'Không tìm thấy';
+                $kq = 'Không tìm thấy ' . $find . ' trong mảng';
             }
         }
     ?>
-    <form action="" method="post">
+    <form action="timkiem-mang.php" method="post">
         <div class="container">
             <div class="header">
                 <h1>TÌM KIẾM</h1>
