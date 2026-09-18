@@ -5,7 +5,7 @@ import HomeScreen from './screen/HomeScreen';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style = {styles.container}>
       <HomeScreen/>
     </SafeAreaProvider>
   );
@@ -13,9 +13,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#eeececd2',
   },
 });

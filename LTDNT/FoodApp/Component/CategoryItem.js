@@ -5,20 +5,27 @@ import { StyleSheet } from 'react-native'
 
 export default function CategoryItem({category, isSelected, onPress}) {
   return (
-    <TouchableOpacity style={styles.container}>
-        <View style={styles.circle}>
+    <TouchableOpacity
+     onPress={()=>{onPress(category.id)}}
+     style={[styles.container, isSelected && styles.selectedContainet]}>
+        <View style={[styles.circle, isSelected && styles.selectedCircle]}>
             <Image style={styles.img} source={{uri: category.icon}}/>
         </View>
-        <Text style={styles.text}>{category.name}</Text>
+        <Text style={[styles.text, isSelected && styles.selectedText]}>{category.name}</Text>
     </TouchableOpacity>
   )
 }
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
+        height: 140,
+        width: 80,
         marginRight: 16,
         alignItems: 'center',
-        borderRadius: 50
+        borderRadius: 50,
+        backgroundColor: 'white',
+    },
+    selectedContainet: {
+        backgroundColor: 'orange'
     },
     circle:{
         justifyContent: 'center',
@@ -29,6 +36,9 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70
     },
+    selectedCircle: {
+        color: 'orange'
+    },
     img:{
         width: 50,
         height: 50,
@@ -38,6 +48,10 @@ const styles = StyleSheet.create({
     text:{
         fontSize: 14,
         fontWeight: '600',
-        color: 'rgba(0, 0, 0, 0)'
+        color: 'rgb(0, 0, 0)'
+    },
+
+    selectedText: {
+        color: 'white'
     }
 })

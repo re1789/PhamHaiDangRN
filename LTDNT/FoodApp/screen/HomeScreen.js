@@ -1,24 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FlatList, StyleSheet, View, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Appbar from '../Component/Appbar'
 import CategoryItem from '../Component/CategoryItem'
-// import ListFood from '../Component/CategoryItem(T)'
+import CategoryList from '../Component/CategoryList'
+import { categoryData, menuData } from '../Constant'
+import FoodList from '../Component/FoodList'
 
 export default function HomeScreen() {
+  const[manhom, setManhom] = useState(null)
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{flex: 1}}>
       <Appbar
         leftIcon="location-outline"
         title="745 Lincoln Pl"
         rightIcon="cart-outline"
       />
-      <CategoryItem
-        
+      <CategoryList
+        categories={categoryData}
+        selectedCategoryID={manhom}
+        onSelectedCategory={setManhom}
       />
-      {/* <ListFood
-        ListTitle1="Main"
-        ListTitle2="Category"
-      /> */}
+      <FoodList
+        data={menuData}
+        categories={manhom}
+        onPressItem={setManhom}
+      />
     </SafeAreaView>
   )
 }
