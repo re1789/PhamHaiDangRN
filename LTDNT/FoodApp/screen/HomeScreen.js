@@ -6,11 +6,13 @@ import CategoryItem from '../Component/CategoryItem'
 import CategoryList from '../Component/CategoryList'
 import { categoryData, menuData } from '../Constant'
 import FoodList from '../Component/FoodList'
+import ProductList from '../Component/ProductList'
 
 export default function HomeScreen() {
   const[manhom, setManhom] = useState(null)
+  const[maSP, setMaSP] = useState(null)
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <Appbar
         leftIcon="location-outline"
         title="745 Lincoln Pl"
@@ -21,10 +23,10 @@ export default function HomeScreen() {
         selectedCategoryID={manhom}
         onSelectedCategory={setManhom}
       />
-      <FoodList
-        data={menuData}
-        categories={manhom}
-        onPressItem={setManhom}
+      <ProductList
+        products={menuData}
+        categories={categoryData}
+        onPress={setMaSP}
       />
     </SafeAreaView>
   )

@@ -26,6 +26,7 @@ export default function CategoryList({categories, selectedCategoryID, onSelected
 }
 const styles = StyleSheet.create({
     flat:{
-        paddingTop: 20
+        paddingTop: 0,
+        flexGrow: 0
     }
 })

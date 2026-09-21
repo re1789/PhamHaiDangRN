@@ -17,8 +17,8 @@ export default function FoodCard({ item, categoryName, onPress }) {
                 <Text>{item.name}</Text>
                 <Text>{item.description}</Text>
                 <Text>{item.calories}</Text>
-                <Text>{item.price}</Text>
-                <Text>{item.star} ⭐</Text>
+                <Text>${item.price}</Text>
+                <Text>⭐{item.star}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: 350,
     marginBottom: 16,
+    marginTop: 20
   },
   img:{
     width: '100%',

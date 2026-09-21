@@ -25,11 +25,10 @@ const styles = StyleSheet.create({
   container: {
 
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    alignItems: 'baseline',
     paddingHorizontal: 10,
-    height: 48,
-    paddingTop: 10
+    paddingVertical: 8,
   },
   title: {
     textAlign: 'center',
