@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { FlatList, StyleSheet, View, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Appbar from '../Component/Appbar'
@@ -9,10 +9,12 @@ import FoodList from '../Component/FoodList'
 import ProductList from '../Component/ProductList'
 
 export default function HomeScreen() {
-  const[manhom, setManhom] = useState(null)
-  const[maSP, setMaSP] = useState(null)
+  const [manhom, setManhom] = useState(null)
+  const [maSP, setMaSP] = useState(null)
+  const menu = useMemo(() => {
+    return menuData.filter((value) => {return value.categoryId === manhom})}, [manhom])
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <Appbar
         leftIcon="location-outline"
         title="745 Lincoln Pl"
@@ -24,7 +26,7 @@ export default function HomeScreen() {
         onSelectedCategory={setManhom}
       />
       <ProductList
-        products={menuData}
+        products={menu}
         categories={categoryData}
         onPress={setMaSP}
       />

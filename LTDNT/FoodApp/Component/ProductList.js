@@ -18,6 +18,7 @@ export default function ProductList({products, categories, onPress}) {
                 onPress = {onPress}
             />
         }}
+        style={{flex: 1}}
     />
   )
 }
