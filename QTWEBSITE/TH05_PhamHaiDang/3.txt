@@ -1,0 +1,169 @@
+<?php
+$firstInput = 'tùng,cúc,trúc,thông,thiên tuế,kim thủy tùng';
+$secondInput = 'mai,lan,cúc,trúc,dạ lý hương';
+$firstOnlyText = '';
+$secondOnlyText = '';
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$firstInput = trim((string)($_POST['first'] ?? ''));
+	$secondInput = trim((string)($_POST['second'] ?? ''));
+}
+
+if ($firstInput === '' || $secondInput === '') {
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$error = 'Vui lòng nhập đầy đủ cả hai mảng chuỗi.';
+	}
+} else {
+	$firstItems = array_map('trim', explode(',', $firstInput));
+	$secondItems = array_map('trim', explode(',', $secondInput));
+
+	if (in_array('', $firstItems, true) || in_array('', $secondItems, true)) {
+		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+			$error = 'Các phần tử phải được ngăn cách bằng dấu phẩy và không được để trống.';
+		}
+	} else {
+		$firstItems = array_values(array_unique($firstItems));
+		$secondItems = array_values(array_unique($secondItems));
+		$firstOnlyText = implode(', ', array_diff($firstItems, $secondItems));
+		$secondOnlyText = implode(', ', array_diff($secondItems, $firstItems));
+	}
+}
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tìm phần tử khác nhau giữa hai mảng</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			padding: 28px 16px;
+			color: #333;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #fff;
+		}
+
+		.form-card {
+			width: min(100%, 520px);
+			margin: 0 auto;
+			padding-bottom: 4px;
+			border: 1px solid #a9d7cd;
+			background: #d6e6da;
+		}
+
+		h1 {
+			margin: 3px;
+			padding: 5px 7px;
+			color: #fff;
+			background: #168e83;
+			text-align: center;
+			font-family: Georgia, 'Times New Roman', serif;
+			font-size: clamp(19px, 4.7vw, 28px);
+			font-style: italic;
+			letter-spacing: 1px;
+		}
+
+		form { padding: 0 5px; }
+		.field {
+			display: grid;
+			grid-template-columns: 185px minmax(0, 1fr);
+			align-items: center;
+			gap: 8px;
+			margin: 5px 0;
+		}
+
+		label { font-size: 14px; line-height: 1.25; }
+		input {
+			width: 100%;
+			min-width: 0;
+			height: 25px;
+			padding: 3px 5px;
+			border: 1px solid #999;
+			border-radius: 1px;
+			background: #fff;
+			font-size: 13px;
+		}
+
+		input[readonly] {
+			color: #1d3285;
+			background: #fffbd0;
+			font-weight: 600;
+		}
+
+		.actions { margin: 4px 0 6px; text-align: center; }
+		button {
+			min-width: 166px;
+			padding: 4px 10px;
+			border: 1px solid #777;
+			border-radius: 2px;
+			color: #fff;
+			background: #168e83;
+			font-size: 13px;
+			cursor: pointer;
+		}
+		button:hover { background: #10796f; }
+
+		.note {
+			margin: 7px -2px 0;
+			padding: 2px 4px;
+			background: #8cdbd2;
+			text-align: center;
+			font-size: 13px;
+		}
+		.error {
+			margin: 7px 5px;
+			color: #a00000;
+			text-align: center;
+			font-size: 13px;
+		}
+
+		@media (max-width: 460px) {
+			.field { grid-template-columns: 1fr; gap: 3px; }
+			form { padding: 0 9px; }
+		}
+	</style>
+</head>
+<body>
+	<main class="form-card">
+		<h1>TÌM PHẦN TỬ KHÁC NHAU GIỮA HAI MẢNG</h1>
+		<form method="post" action="">
+			<div class="field">
+				<label for="first">Mảng chuỗi thứ nhất:</label>
+				<input
+					id="first"
+					name="first"
+					type="text"
+					value="<?= htmlspecialchars($firstInput, ENT_QUOTES, 'UTF-8') ?>"
+					required
+				>
+			</div>
+			<div class="field">
+				<label for="second">Mảng chuỗi thứ hai:</label>
+				<input
+					id="second"
+					name="second"
+					type="text"
+					value="<?= htmlspecialchars($secondInput, ENT_QUOTES, 'UTF-8') ?>"
+					required
+				>
+			</div>
+			<div class="actions"><button type="submit">Phân tích hai mảng</button></div>
+			<div class="field">
+				<label for="first-only">Phần tử chỉ có trong mảng thứ nhất</label>
+				<input id="first-only" type="text" value="<?= htmlspecialchars($firstOnlyText, ENT_QUOTES, 'UTF-8') ?>" readonly>
+			</div>
+			<div class="field">
+				<label for="second-only">Phần tử chỉ có trong mảng thứ hai</label>
+				<input id="second-only" type="text" value="<?= htmlspecialchars($secondOnlyText, ENT_QUOTES, 'UTF-8') ?>" readonly>
+			</div>
+			<?php if ($error !== ''): ?>
+				<p class="error" role="alert"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></p>
+			<?php endif; ?>
+			<p class="note">(Ghi chú: các phần tử trong mảng cách nhau bằng dấu “,”)</p>
+		</form>
+	</main>
+</body>
+</html>
