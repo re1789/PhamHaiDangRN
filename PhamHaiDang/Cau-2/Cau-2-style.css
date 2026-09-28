@@ -1,0 +1,29 @@
+.container{
+    background-color: rgb(250, 219, 134);
+    width: min(600px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.header{
+    color: white;
+    background-color: rgb(231, 158, 21);
+    padding: 3px;
+    margin: 0 auto;
+    text-align: center;
+}
+table{
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+td, th{
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+td{
+    padding: 10px;
+}
+input{
+    width: 100%;
+}
