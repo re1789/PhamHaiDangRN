@@ -4,15 +4,17 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import NewFeed from './src/screens/NewFeed';
 import ListFind from './src/Bai_tap_4/ListFind';
 import AppbarWithProps from './src/Compoments/AppbarWithProps';
+import DemoGetAPI from './src/screens/DemoGetAPI';
 
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
-      <AppbarWithProps
+      {/* <AppbarWithProps
         leftIcon='menu'
         title='Appbar'
         rightIcon='search'
-      />
+      /> */}
+      <DemoGetAPI/>
     </SafeAreaProvider>
   );
 }
