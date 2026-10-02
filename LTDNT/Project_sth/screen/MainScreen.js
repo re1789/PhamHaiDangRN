@@ -16,7 +16,7 @@ export default function MainScreen() {
       const controller = new AbortController ()
   
       useEffect (() => {
-          const getPosts = async () => { 
+          const getPosts = async () => {
   
               try {
                 const responsePost = await fetch ('https://jsonplaceholder.typicode.com/posts')
