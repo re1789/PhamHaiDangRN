@@ -14,7 +14,7 @@ export default function CountUser({user, admin, customer}) {
         <Text style = {styles.txt2}>{admin}</Text>
       </View>
       <View style = {styles.item}>
-        <Text style = {styles.txt1}>User</Text>
+        <Text style = {styles.txt1}>Customer</Text>
         <Text style = {styles.txt2}>{customer}</Text>
       </View>
     </View>

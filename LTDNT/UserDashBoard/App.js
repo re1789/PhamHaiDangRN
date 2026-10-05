@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Appbar from './component/Appbar';
-import User from './screen/User';
 import Users from './TESST/Users';
+import User from './screen/User';
 
 export default function App() {
   return (

@@ -5,14 +5,15 @@ import Ionicons from '@react-native-vector-icons/ionicons'
 import { StyleSheet } from 'react-native'
 import CountUser from '../component/CountUser'
 import FilterBar from '../component/FilterBar'
-import UserList from '../component/userList'
-import { ActivityIndicator } from 'react-native'
+import { FlatList } from 'react-native'
+import UserItem from '../component/UserItem'
+import Footer from '../component/Footer'
 
 export default function User() {
-  const [items, setItems] = useState([])
-  const [loading, setLoading] = useState ( false )
-  const [error, setError] = useState (null)
-  const [roleFilter, setRoleFilter] = useState('all')
+  const roles = ['all', 'admin', 'customer']
+  const [selectedRole, setSelectedRole] = useState('all')
+
+  const [users, setUsers] = useState([])
 
   useEffect (() => {
     const controller = new AbortController ()
@@ -21,24 +22,24 @@ export default function User() {
         const response = await fetch ('https://api.escuelajs.co/api/v1/users')
 
         if (!response.ok) {
-          throw new Error (`Lỗi {response.status}`)
+          throw new Error (`Lỗi ${response.status}`)
         }
         const data = await response.json()
-        setUser (data)
+        setUsers (data)
       }
       catch (error) {
-        setError (error.message)
-        if ( error) {
-          return <Text> Lỗi {error} </Text>
-        }
+        console.error (error)
       }
     }
     getData ()
-    return () => { controller.abort () }
   }, [])
-  if (loading == true) {
-    return <ActivityIndicator size = 'large' />
+  const onEdit = () => {
+    console.log(`Đã edit user`)
   }
+  const onDelete = () => {
+    console.log(`Đã xóa user`)
+  }
+  const filteredUsers = selectedRole === 'all' ? users : users.filter(user => user.role === selectedRole)
 
   return (
     <View style = {styles.container}>
@@ -60,17 +61,31 @@ export default function User() {
         </TouchableOpacity>
       </View>
       <CountUser
-        user={100}
-        admin={256}
-        customer={512}
+        user={users.length}
+        admin={users.filter(user => user.role === 'admin').length}
+        customer={users.filter(user => user.role === 'customer').length}
       />
-      <FilterBar
-        onPressAll={() => setRoleFilter('all')}
-        onPressAdmin={() => setRoleFilter('admin')}
-        onPressCustomer={() => setRoleFilter('customer')}
+      <FlatList
+        data={filteredUsers}
+        keyExtractor={(user) => user.id}
+        renderItem={({item}) => {
+          return <UserItem
+            item={item}
+            onEditPress={onEdit}
+            onDeletePress={onDelete}
+          />
+        }}
+        ListHeaderComponent = {() => (
+          <FilterBar
+            roles={roles}
+            selectedRole={selectedRole}
+            onPress={setSelectedRole}
+          />
+        )}
       />
-      <UserList
-        items = {items}
+      <Footer
+        companyName="Platzi Fake Store API"
+        link="https://api.escuelajs.co/api/v1/users"
       />
     </View>
   )
