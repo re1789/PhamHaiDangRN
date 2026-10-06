@@ -3,11 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import Appbar from './component/Appbar';
 import Users from './TESST/Users';
 import User from './screen/User';
+import UserPost from './screen/UserPost';
 
 export default function App() {
   return (
     <View style = {styles.container}>
-      <User/>
+      {/* <User/> */}
+      <UserPost/>
     </View>
   );
 }

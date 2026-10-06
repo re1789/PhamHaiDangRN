@@ -16,12 +16,15 @@ export default function Footer({companyName}) {
 }
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 5,
-        padding: 10,
-        backgroundColor: '#f2f2f2'
+      position: 'absolute',
+      bottom: 0,
+      width: '100%',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: 5,
+      padding: 10,
+      backgroundColor: '#f2f2f2'
     },
     text: {
         color: '#000000',

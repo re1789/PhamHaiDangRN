@@ -51,12 +51,12 @@ export default function User() {
       <View style = {styles.userList}>
         <Text style = {styles.txt1}>User List</Text>
         <TouchableOpacity style = {styles.addUserBtn}>
-        <Text style = {{ fontWeight: 'bold', fontSize: 25, color: 'white' }}>+</Text>
-          <Ionicons
-            name='people-outline'
-            size={24}
-            color = 'white'
-          />
+          <Text style = {{ fontWeight: 'bold', fontSize: 25, color: 'white' }}>+</Text>
+            <Ionicons
+              name='people-outline'
+              size={24}
+              color = 'white'
+            />
           <Text style = {styles.txt2}>Add User</Text>
         </TouchableOpacity>
       </View>

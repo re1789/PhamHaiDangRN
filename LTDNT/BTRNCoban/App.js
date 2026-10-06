@@ -5,6 +5,7 @@ import NewFeed from './src/screens/NewFeed';
 import ListFind from './src/Bai_tap_4/ListFind';
 import AppbarWithProps from './src/Compoments/AppbarWithProps';
 import DemoGetAPI from './src/screens/DemoGetAPI';
+import DemoPostAPI from './src/screens/DemoPostAPI';
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
         title='Appbar'
         rightIcon='search'
       /> */}
-      <DemoGetAPI/>
+      {/* <DemoGetAPI/> */}
+      <DemoPostAPI/>
     </SafeAreaProvider>
   );
 }
