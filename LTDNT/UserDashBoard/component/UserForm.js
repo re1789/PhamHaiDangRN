@@ -4,7 +4,6 @@ import Ionicons from '@react-native-vector-icons/ionicons'
 import { TextInput } from 'react-native'
 import { StyleSheet } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
-import { Image } from 'react-native'
 import { Button } from 'react-native'
 
 export default function UserForm() {
@@ -14,22 +13,26 @@ export default function UserForm() {
   return (
     <View style = {styles.container}>
       <Text style={styles.title}>ADD NEW USER</Text>
+      {/* Nhập tên người dùng mới */}
       <Text style={styles.txt}>Full Name</Text>
       <View style = {styles.Input}>
         <Ionicons style={styles.icon} name='person-outline' size={20} color='black' />
         <TextInput style={styles.input} keyboardType='text' />
       </View>
+      {/* Nhập email người dùng mới */}
       <Text style={styles.txt}>Email Address</Text>
       <View style = {styles.Input}>
         <Ionicons style={styles.icon} name='mail-outline' size={20} color='black' />
         <TextInput style={styles.input} keyboardType='email-address' />
       </View>
+      {/* Nhập mật khẩu */}
       <Text style={styles.txt}>Password</Text>
       <View style = {styles.Input}>
         <TextInput
           style={styles.input}
           secureTextEntry={!pass}
         />
+        {/* Cái nút */}
         <TouchableOpacity onPress={() => setPass(!pass)}>
           <Ionicons
             style={styles.icon}

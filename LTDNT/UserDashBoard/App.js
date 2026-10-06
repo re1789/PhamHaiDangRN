@@ -4,12 +4,14 @@ import Appbar from './component/Appbar';
 import Users from './TESST/Users';
 import User from './screen/User';
 import UserPost from './screen/UserPost';
+import ProductList from './screen/ProductList';
 
 export default function App() {
   return (
     <View style = {styles.container}>
       {/* <User/> */}
-      <UserPost/>
+      {/* <UserPost/> */}
+      <ProductList/>
     </View>
   );
 }
