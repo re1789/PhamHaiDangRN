@@ -44,7 +44,7 @@ $kq = '';
             </tr>
             <tr>
                 <td>Khoảng cách:</td>
-                <td><marquee behavior="" direction="right"><input type="text" readonly name="outP" value="<?php echo htmlspecialchars($kq) ?>"></marquee></td>
+                <td><input type="text" readonly name="outP" value="<?php echo htmlspecialchars($kq) ?>"></marquee></td>
             </tr>
             <tr>
                 <td colspan="3"><Button type="submit" name="okay" class="btn"><span data-text="Thực hiện">Thực hiện</span></Button></td>

@@ -1,14 +1,14 @@
 const form = document.querySelector(".container");
 const button = form.querySelector(".btn");
-let isAnimating = false;
-let allowSubmit = false;
+let Animating = false;
+let Submit = false;
 
 form.addEventListener("submit", (event) => {
-    if (allowSubmit) return;
+    if (Submit) return;
     event.preventDefault();
 
-    if (isAnimating) return;
-    isAnimating = true;
+    if (Animating) return;
+    Animating = true;
     button.classList.add("is-filling");
 
     const submitter = event.submitter || button;
@@ -16,8 +16,8 @@ form.addEventListener("submit", (event) => {
         button.classList.remove("is-filling");
 
         window.setTimeout(() => {
-            allowSubmit = true;
+            Submit = true;
             form.requestSubmit(submitter);
-        }, 500);
+        }, 300);
     }, 700);
 });
