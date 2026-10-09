@@ -6,6 +6,7 @@ import ListFind from './src/Bai_tap_4/ListFind';
 import AppbarWithProps from './src/Compoments/AppbarWithProps';
 import DemoGetAPI from './src/screens/DemoGetAPI';
 import DemoPostAPI from './src/screens/DemoPostAPI';
+import DemoID from './src/screens/DemoID';
 
 export default function App() {
   return (
@@ -16,7 +17,8 @@ export default function App() {
         rightIcon='search'
       /> */}
       {/* <DemoGetAPI/> */}
-      <DemoPostAPI/>
+      {/* <DemoPostAPI/> */}
+      <DemoID/>
     </SafeAreaProvider>
   );
 }
