@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput } from 'react-native'
 import Ionicons from '@react-native-vector-icons/ionicons'
 
-export default function Index() {
-    const [email,setemail]=useState('')
+export default function Login() {
+    const [email,setEmail]=useState('')
     const [PassWord,setPassWord]=useState('')
     const payload={
         "email": email,
         "PassWord":PassWord
-}
+    }
     const login=async() => { 
         try{
             const respone=await fetch('https://api.escuelajs.co/api/v1/auth/login',
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         fontSize: 16,
         width: '100%',
+        outlineStyle: 'none' // không còn ô đen trong khung nhập dữ liệu nữa, hẹ hẹ hẹ
     },
     Text: {
         paddingTop: 30,
