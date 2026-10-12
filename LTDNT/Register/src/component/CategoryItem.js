@@ -9,7 +9,7 @@ export default function CategoryItem({category, isSelected, onPress}) {
      onPress={()=>{onPress(category.id)}}
      style={[styles.container, isSelected && styles.selectedContainet]}>
         <View style={[styles.circle, isSelected && styles.selectedCircle]}>
-            <Image style={styles.img} source={{uri: category.icon}}/>
+            <Image style={styles.img} source={{uri: category.image}}/>
         </View>
         <Text style={[styles.text, isSelected && styles.selectedText]}>{category.name}</Text>
     </TouchableOpacity>

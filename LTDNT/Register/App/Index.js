@@ -2,13 +2,15 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput } from 'react-native'
 import Ionicons from '@react-native-vector-icons/ionicons'
+import { useRouter } from 'expo-router'
 
 export default function Login() {
+    const router = useRouter();
     const [email,setEmail]=useState('')
-    const [PassWord,setPassWord]=useState('')
+    const [Password,setPassword]=useState('')
     const payload={
         "email": email,
-        "PassWord":PassWord
+        "Password":Password
     }
     const login=async() => { 
         try{
@@ -24,9 +26,8 @@ export default function Login() {
             console.log(await respone.json())
         }
         catch(err){
-
-     }
-
+            console.log(err);
+        }
     }
   return (
     <View style = {styles.container}>
@@ -42,6 +43,10 @@ export default function Login() {
                 />
                 <TextInput
                     style = {styles.input}
+                    value = {email}
+                    onChangeText={setEmail}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
                 />
             </View>
             <Text style = {styles.Text}>Password</Text>
@@ -53,12 +58,14 @@ export default function Login() {
                 />
                 <TextInput
                     style = {styles.input}
+                    value={Password}
+                    onChangeText={setPassword}
                     secureTextEntry
                 />
             </View>
         </View>
         <View style = {styles.btn}>
-            <TouchableOpacity activeOpacity={0.7} style = {styles.in}>
+            <TouchableOpacity onPress={() => router.push("/product")} activeOpacity={0.7} style = {styles.in}>
                 <Text>SIGN IN</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style = {styles.up}>

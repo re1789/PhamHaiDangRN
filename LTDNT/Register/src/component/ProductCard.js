@@ -6,23 +6,17 @@ import { StyleSheet } from 'react-native'
 
 export default function ProductCard({item, categoryName, onPress}) {
   return (
-    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => {onPress(item.menuId)}}>
+    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => {onPress(item.id)}}>
         <View style = {styles.card}>
-          <Image style = {styles.image} source={{uri: item.photo}}/>
-
-        {/* Tgian chế biến */}
-        <View style = {styles.duration}>
-            <Text>{item.duration}</Text>
+          <Image style = {styles.image} source={{uri: item.images?.[0]}}/>
         </View>
-        </View>
-        {/* Tên món ăn */}
-        <Text style = {styles.name}>{item.name}</Text>
+        <Text style = {styles.name}>{item.title}</Text>
 
         {/* Phần đánh giá */}
         <View style = {styles.info}>
           <Text style={styles.infoText}>
             <Ionicons name='star' size={24} color='yellow'/>
-            {item.star}
+            {item.rating?.rate ?? ''}
           </Text>
           <Text style={styles.infoText}>●</Text>
           <Text style={styles.infoText}>{categoryName}</Text>

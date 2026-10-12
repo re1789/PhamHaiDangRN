@@ -1,0 +1,6 @@
+Xem lại:
+1. Fetch:
+- Get
+- Post
+- Put
+2. Stack Navigation (expo router)
