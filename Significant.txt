@@ -4,3 +4,5 @@ Xem lại:
 - Post
 - Put
 2. Stack Navigation (expo router)
+
+==//====//==//==//==//==//==//==
