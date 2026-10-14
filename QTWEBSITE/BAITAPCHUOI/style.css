@@ -1,0 +1,92 @@
+.container {
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 550px;
+    background-color: lightgreen;
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.header {
+    text-align: center;
+    background-color: white;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+input {
+    width: 300px;
+    height: 30px;
+}
+table {
+    width: 100%;
+}
+.btn {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    border: 0px solid lightgray;
+    border-radius: 10px;
+    background-color: #fdfcfca6;
+    padding: 20px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    z-index: -1;
+    background-color: #41cc00;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease;
+}
+.btn::after {
+    content: "";
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    background-color: #41cc00;
+
+    transition: width 0.25s ease;
+}
+.btn:hover::after {
+    width: 100%;
+}
+.btn.is-filling::before {
+    transform: scaleY(1);
+}
+.btn span {
+    position: relative;
+    display: inline-block;
+}
+.btn span::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: white;
+    white-space: nowrap;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.5s ease;
+}
+.btn.is-filling span::after {
+    clip-path: inset(0 0 0 0);
+}
+.btn.is-not-filling::after {
+    transform: scaleX(1);
+}

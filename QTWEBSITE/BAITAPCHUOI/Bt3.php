@@ -18,12 +18,10 @@ if (isset($_POST['chuoi'])) {
 </head>
 <body>
     <div class="container">
-        <div class="title">
+        <div class="header">
             <h2>Chia Chuỗi Thành Các Ký Tự Đảo Ngược</h2>
         </div>
         <form action="" method="post">
-            <div class="content">   
-            </div>
             <table>
                 <tr>
                     <td><p>Nhập chuỗi: </p></td>
@@ -34,7 +32,7 @@ if (isset($_POST['chuoi'])) {
                     <td><input type="text" value="<?php echo $kq; ?>" readonly></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><button type="submit" name="thuchien" class="nut">Thực hiện</button></td>
+                    <td colspan="3"><button type="submit" name="okay" class="btn">Thực hiện</button></td>
                 </tr>
             </table>
         </form>
