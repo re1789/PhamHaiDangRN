@@ -90,3 +90,7 @@ table {
 .btn.is-not-filling::after {
     transform: scaleX(1);
 }
+#cb {
+    width: 308px;
+    height:35px;
+}

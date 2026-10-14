@@ -40,8 +40,13 @@
                     }
                 }
             }
-
-            $kq = "Có " . $nguyen_am . " nguyên âm và " . $phu_am . " phụ âm";
+            if (!$nguyen_am && $phu_am) {
+                $kq = "Có " . $phu_am . " phụ âm";
+            } elseif ($nguyen_am && !$phu_am) {
+                $kq = "Có " . $nguyen_am . " nguyên âm";
+            } else {
+                $kq = "Có " . $nguyen_am . " nguyên âm và " . $phu_am . " phụ âm";
+            }
         }
     }
 ?>
