@@ -23,7 +23,9 @@
     "plugins": [
       "@react-native-vector-icons/material-icons",
       "@react-native-vector-icons/ionicons",
-      "@react-native-vector-icons/fontawesome-free-solid"
+      "@react-native-vector-icons/fontawesome-free-solid",
+      "expo-router",
+      "expo-status-bar"
     ]
   }
 }

@@ -1,12 +1,15 @@
 1. Cần để có thể chạy trên web
 npx expo install react-dom react-native-web
+
 2. Expo router: 
-npx expo install expo-router react-native-safe-area-context react-native-screens
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
 3. Các thư viện Icon:
 Link thư viện: https://oblador.github.io/react-native-vector-icons/
 npm install @react-native-vector-icons/ionicons --force
 npx expo install @react-native-vector-icons/material-icons
 npx expo install @react-native-vector-icons/ionicons
 npx expo install @react-native-vector-icons/fontawesome-free-solid
+
 4. Nếu không chạy được, mở powershell rồi nhập lệnh, chạy rồi bấm a rồi enter:
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser

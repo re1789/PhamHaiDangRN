@@ -15,11 +15,11 @@ export default function HomeScreen() {
     return menuData.filter((value) => {return value.categoryId === manhom})}, [manhom])
   return (
     <SafeAreaView style={{flex: 1}}>
-      <Appbar
+      {/* <Appbar
         leftIcon="location-outline"
         title="745 Lincoln Pl"
         rightIcon="cart-outline"
-      />
+      /> */}
       <CategoryList
         categories={categoryData}
         selectedCategoryID={manhom}

@@ -21,7 +21,7 @@ export default function App() {
   const [maMonan, setMamonan] = useState(null)
   return (
     <SafeAreaProvider style = {styles.container}>
-      <HomeScreen/>
+      {/* <HomeScreen/> */}
     </SafeAreaProvider>
   );
 }

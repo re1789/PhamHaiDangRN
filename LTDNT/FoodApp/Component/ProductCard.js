@@ -3,10 +3,16 @@ import React from 'react'
 import { Image } from 'react-native'
 import Ionicons from '@react-native-vector-icons/ionicons'
 import { StyleSheet } from 'react-native'
+import { useRouter } from 'expo-router'
 
-export default function ProductCard({item, categoryName, onPress}) {
+export default function ProductCard({item, categoryName}) {
+  const router = useRouter()
   return (
-    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => {onPress(item.menuId)}}>
+    // item.menuId
+    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => {router.push({
+      pathname: 'products',
+      params: {id: item.menuId}
+    })}}>
         <View style = {styles.card}>
           <Image style = {styles.image} source={{uri: item.photo}}/>
 
