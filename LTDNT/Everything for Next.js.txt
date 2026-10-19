@@ -13,3 +13,15 @@ npx expo install @react-native-vector-icons/fontawesome-free-solid
 
 4. Nếu không chạy được, mở powershell rồi nhập lệnh, chạy rồi bấm a rồi enter:
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+5. Những gói cài đặt expo:
+- npx create-expo-app TênProject --template blank
+- npx expo install react-native-safe-area-context
+- npm install
+
+6. Khác:
+- npx expo install react-native-element-dropdown
+- Tích hợp expo router vào dự án:
+|- Cập nhật file package.json: đổi giá trị của main thành expo-router/entry
+|- Tạo thư mục app(có thể xoá folder App) gồm các file làm màn hình chính: index.js, _layout.js(file điều hướng)
+|- Tạo một folder khác làm màn hình kế(ví dụ như products): index.js, [id].js(một id động)
