@@ -12,6 +12,7 @@ export default function _layout() {
     >
     <Stack.Screen name='index' options={{headerTitle: '745 Lincoln Pl'}} />
     <Stack.Screen name='products' options={{headerTitle: 'Burger Story'}} />
+    <Stack.Screen name='/products/detail' options={{headerTitle: ''}}/>
     </Stack>
   )
 }
