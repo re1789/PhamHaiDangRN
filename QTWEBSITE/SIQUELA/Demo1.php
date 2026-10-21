@@ -3,7 +3,14 @@
     $pass = "123456";
     $server = "localhost";
     $dbname = "tintuc";
+    // Kết nối database
     $connect = new mysqli($server, $name, $pass, $dbname);
+
+    $title = "";
+    $date = "";
+    $description = "";
+    $content = "";
+
 
     // Báo lỗi nếu không kết nối được
     if ($connect -> connect_error) {
@@ -19,7 +26,7 @@
 
     // $sqlDelete = "DELETE FROM tin_xahoi WHERE id = 11";
 
-    $sqlUpdate = "UPDATE tin_xahoi SET title = 'Học có trễ đâu', content = 'Đây là nội dung của bài viết Học có trễ đâu' WHERE id = 1";
+    // $sqlUpdate = "UPDATE tin_xahoi SET title = 'Học có trễ đâu', content = 'Đây là nội dung của bài viết Học có trễ đâu' WHERE id = 1";
 
     // Select
     $result = $connect -> query($sqlSelect);
@@ -34,6 +41,26 @@
     } else {
         echo "Không có dữ liệu" . "<br>";
     }
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST["title"])) { $title = $_POST['title']; }
+        if(isset($_POST["date"])) { $date = $_POST['date']; }
+        if(isset($_POST["description"])) { $description = $_POST['description']; }
+        if(isset($_POST["content"])) { $content = $_POST['content']; }
+
+        $sql = "INSERT INTO tin_xahoi (title, date, description, content)
+        VALUES ('$title', '$date', '$description', '$content')";
+
+        if (mysqli_query($connect, $sql)) {
+            echo "Thêm dữ liệu thành công";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($connect);
+        }
+    }
+
+
+
 
     // Insert
     // if($connect -> query($sqlInsert) === true) {
@@ -50,10 +77,47 @@
     // }
 
     // Update
-    if($connect -> query($sqlUpdate) === true) {
-        echo "Dữ liệu đã được cập nhật<br>";
-    } else {
-        echo "Lỗi cập nhật: " . $connect -> error;
-    }
+    // if($connect -> query($sqlUpdate) === true) {
+    //     echo "Dữ liệu đã được cập nhật<br>";
+    // } else {
+    //     echo "Lỗi cập nhật: " . $connect -> error;
+    // }
     $connect -> close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1></h1>
+    </div>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Tiêu đề:</th>
+                <td><input type="text" name="title" value=""></td>
+            </tr>
+
+            <tr>
+                <th>Ngày tháng:</th>
+                <td><input type="date" name="date" value=""></td>
+            </tr>
+
+            <tr>
+                <th>Mô tả:</th>
+                <td><input type="text" name="description" value=""></td>
+            </tr>
+
+            <tr>
+                <th>Nội dung:</th>
+                <td><textarea cols="30" rows="7" name="content"></textarea></td>
+            </tr>
+        </table>
+        <button type="submit">Gửi</button>
+    </form>
+</body>
+</html>
