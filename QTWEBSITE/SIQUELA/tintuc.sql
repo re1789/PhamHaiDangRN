@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2026 at 02:57 AM
+-- Generation Time: Oct 21, 2026 at 11:48 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `tin_xahoi` (
 --
 
 INSERT INTO `tin_xahoi` (`id`, `title`, `date`, `description`, `content`) VALUES
-(1, 'Hoc khong bao gio la tre', '2026-10-21', 'Bai viet sau day se cho ban biet ro ly do tai sao hoc khong bao gio la tre.', 'Day la noi dung cua bai viet \"Hoc khog bao gio la tre\"');
+(1, 'Học có trễ đâu', '2026-10-21', 'Bai viet sau day se cho ban biet ro ly do tai sao hoc khong bao gio la tre.', 'Đây là nội dung của bài viết Học có trễ đâu');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +60,7 @@ ALTER TABLE `tin_xahoi`
 -- AUTO_INCREMENT for table `tin_xahoi`
 --
 ALTER TABLE `tin_xahoi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
