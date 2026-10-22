@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+table {
+    width: 85%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #888;
+}
+th {
+    background-color: #e4c620;
+    border: 1px solid #888;
+    padding: 8px;
+    text-align: center;
+}
+td {
+    border: 1px solid #888;
+    padding: 8px;
+    font-family: sans-serif;
+}
+.title {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
