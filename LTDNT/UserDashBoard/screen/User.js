@@ -16,7 +16,7 @@ export default function User() {
   const [users, setUsers] = useState([])
 
   useEffect (() => {
-    const controller = new AbortController ()
+    // const controller = new AbortController ()
     const getData = async () => { 
       try {
         const response = await fetch ('https://api.escuelajs.co/api/v1/users')

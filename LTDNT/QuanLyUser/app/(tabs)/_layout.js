@@ -14,7 +14,7 @@ export default function _layout() {
         <Tabs.Screen name = "index" options={{
           tabBarIcon: ({color}) => {
             return <Ionicons
-              name='people'
+              name='home'
               size={30}
               color={color}
             />

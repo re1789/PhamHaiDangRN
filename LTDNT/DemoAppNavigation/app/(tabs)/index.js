@@ -12,7 +12,7 @@ export default function Home() {
         title = "Chichi lapu"
         rightIcon = "cart-outline"
       />
-      <TouchableOpacity onPress={() => router.push("/user")} activeOpacity={0.7}>
+      <TouchableOpacity onPress={() => router.push("/like")} activeOpacity={0.7}>
         <Text>Yêu thích</Text>
       </TouchableOpacity>
     </View>
