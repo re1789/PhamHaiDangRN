@@ -9,8 +9,8 @@ import ProductList from './screen/ProductList';
 export default function App() {
   return (
     <View style = {styles.container}>
-      {/* <User/> */}
-      {/* <UserPost/> */}
+      <User/>
+      <UserPost/>
       <ProductList/>
     </View>
   );

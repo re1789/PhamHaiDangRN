@@ -10,7 +10,8 @@ export default function _layout() {
       headerShown: true,
       headerTitleAlign: "center"
     }}
-
-    />
+    >
+      <Stack.Screen name='product'options={{headerTitle: 'Product list'}}/>
+    </Stack>
   )
 }

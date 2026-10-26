@@ -7,7 +7,7 @@ export default function UserItem({item, onEditPress, onDeletePress}) {
     const badgeColor = color[item.role]
   return (
     <View style = {styles.container}>
-      <Image source={{uri: item.avatar}}/>
+      <Image style = {styles.img} source={{uri: item.avatar}}/>
       <View style = {styles.userInfo}>
         <Text numberOfLines={1} ellipsizeMode="tail">
           {item.name}
@@ -34,7 +34,7 @@ export default function UserItem({item, onEditPress, onDeletePress}) {
             <Ionicons
                 name = "trash"
                 size = {24}
-                color = "white"
+                color = "black"
             />
         </TouchableOpacity>
       </View>
@@ -82,5 +82,11 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         marginRight: 10,
         flexShrink: 0,
+    },
+    img: {
+      width: 50,
+      height: 50,
+      marginHorizontal: 10,
+      borderRadius: 999
     }
 })

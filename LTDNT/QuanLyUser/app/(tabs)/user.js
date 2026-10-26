@@ -4,10 +4,13 @@ import Appbar from '../../component/Appbar'
 import UserList from '../../component/UserList'
 import CountUser from '../../component/CountUser'
 import UserItem from '../../component/UserItem'
+import FilterBar from '../../component/FilterBar'
 
 export default function user() {
-  const roles = ["Users", "Admin", "Customer"]
+  const roles = ["all", "admin", "customer"]
   const [users, setUsers] = useState()
+  const [selectedRole, setSelectedRole] = useState('all')
+  const filterUser = selectedRole === 'all' ? (users ?? []) : (users ?? []).filter(user => user.role === selectedRole)
   useEffect(() => {
     const getData = async () => {
       try {
@@ -24,8 +27,10 @@ export default function user() {
         console.log(err)
       }
     }
+    
     getData()
   }, [])
+
   return (
     <View style = {styles.container}>
       <Appbar
@@ -36,11 +41,16 @@ export default function user() {
       <UserList/>
       <CountUser
         users = {users?.length}
-        admin = {users?.filter(user => user.role.name === 'admin').length}
-        customer = {users?.filter(user => user.role.name === 'customer').length}
+        admin = {users?.filter(user => user.role === 'admin').length}
+        customer = {users?.filter(user => user.role === 'customer').length}
+      />
+      <FilterBar
+        roles={roles}
+        selectedRole={selectedRole}
+        onPress={setSelectedRole}
       />
       <FlatList
-        data = {users}
+        data = {filterUser}
         keyExtractor = {(user) => user.id}
         renderItem = {({item}) => {
           return <UserItem

@@ -1,12 +1,14 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import Ionicons from '@react-native-vector-icons/ionicons'
+import { useRouter } from 'expo-router'
 
 export default function UserList() {
+  const router = useRouter();
   return (
     <View style = {styles.container}>
       <Text style = {styles.txt}>UserList</Text>
-      <TouchableOpacity style = {styles.btn}>
+      <TouchableOpacity style = {styles.btn} onPress={ () => router.push(`UserForm`)}>
         <Ionicons
             name = 'people'
             size = {24}

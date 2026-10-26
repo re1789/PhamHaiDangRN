@@ -7,6 +7,7 @@ import AppbarWithProps from './src/Compoments/AppbarWithProps';
 import DemoGetAPI from './src/screens/DemoGetAPI';
 import DemoPostAPI from './src/screens/DemoPostAPI';
 import DemoID from './src/screens/DemoID';
+import DemoCarousel from './src/screens/DemoCarousel';
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
       /> */}
       {/* <DemoGetAPI/> */}
       {/* <DemoPostAPI/> */}
-      <DemoID/>
+      {/* <DemoID/> */}
+      <DemoCarousel/>
     </SafeAreaProvider>
   );
 }
