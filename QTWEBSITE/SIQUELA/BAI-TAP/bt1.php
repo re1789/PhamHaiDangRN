@@ -1,6 +1,6 @@
 <?php
     $server = 'localhost';
-    $username = 'admin';
+    $username = 'root';
     $pass = '';
     $dbname = 'ql_ban_sua';
 
