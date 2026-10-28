@@ -3,47 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thông Tin Các Sản Phẩm - Dạng Cột Có Link</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #b22222;
-        }
-        table.main-table {
-            width: 90%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            border: 1px solid #bbb;
-        }
-        table.main-table td {
-            border: 1px solid #bbb;
-            padding: 10px;
-            text-align: center;
-            vertical-align: top;
-            width: 20%;
-        }
-        .product-name a {
-            font-weight: bold;
-            color: #b22222;
-            font-size: 14px;
-            text-decoration: none;
-        }
-        .product-name a:hover {
-            text-decoration: underline;
-        }
-        .product-info {
-            font-size: 13px;
-            margin-bottom: 8px;
-            margin-top: 4px;
-        }
-        .product-img img {
-            max-width: 80px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/bt7.1.css">
 </head>
 <body>
 

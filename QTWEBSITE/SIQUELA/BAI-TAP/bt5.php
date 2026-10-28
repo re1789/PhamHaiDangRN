@@ -3,46 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thông Tin Các Sản Phẩm</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #b22222;
-        }
-        table {
-            width: 70%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        td {
-            border: 1px solid #bbb;
-            padding: 12px;
-            vertical-align: middle;
-        }
-        .img-col {
-            width: 25%;
-            text-align: center;
-        }
-        .img-col img {
-            max-width: 90px;
-            height: auto;
-        }
-        .content-col {
-            width: 75%;
-        }
-        .ten-sua {
-            font-weight: bold;
-            color: #00008b;
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
-        .detail-line {
-            margin-bottom: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/bt5.css">
 </head>
 <body>
 

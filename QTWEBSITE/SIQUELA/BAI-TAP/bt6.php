@@ -3,43 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thông Tin Các Sản Phẩm - Dạng Cột</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #b22222;
-        }
-        table.main-table {
-            width: 90%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            border: 1px solid #bbb;
-        }
-        table.main-table td {
-            border: 1px solid #bbb;
-            padding: 10px;
-            text-align: center;
-            vertical-align: top;
-            width: 20%; /* Mỗi hàng 5 cột tương ứng 20% */
-        }
-        .product-name {
-            font-weight: bold;
-            color: #000;
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-        .product-info {
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-        .product-img img {
-            max-width: 80px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/bt6.css">
 </head>
 <body>
 
