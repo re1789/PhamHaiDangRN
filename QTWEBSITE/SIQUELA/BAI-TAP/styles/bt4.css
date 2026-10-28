@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h2 {
+    text-align: center;
+    color: #b25900;
+}
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+th {
+    background-color: #f4b084;
+    color: #000;
+    padding: 8px;
+    border: 1px solid #999;
+}
+td {
+    padding: 8px;
+    border: 1px solid #999;
+}
+.row-even {
+    background-color: #fce4d6;
+}
+.row-odd {
+    background-color: #ffffff;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pagination a {
+    text-decoration: none;
+    color: #b25900;
+    margin: 0 5px;
+}
+.pagination a:hover {
+    text-decoration: underline;
+}
+.pagination span {
+    color: red;
+    margin: 0 5px;
+}

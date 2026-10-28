@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h2 {
+    text-align: center;
+    color: #b25900;
+    font-style: italic;
+}
+table.detail-table {
+    width: 70%;
+    margin: 0 auto 20px auto;
+    border-collapse: collapse;
+    border: 2px solid #b25900;
+}
+th {
+    background-color: #fff;
+    color: #b25900;
+    font-size: 20px;
+    font-style: italic;
+    padding: 8px;
+    border: 1px solid #b25900;
+    text-align: center;
+}
+td.img-cell {
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #bbb;
+    padding: 10px;
+}
+td.img-cell img {
+    max-width: 130px;
+    height: auto;
+}
+td.info-cell {
+    width: 70%;
+    vertical-align: top;
+    border: 1px solid #bbb;
+    padding: 10px;
+    font-size: 14px;
+}
+.section-title {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 6px;
+    color: #000;
+}
+.price-weight {
+    text-align: right;
+    font-weight: bold;
+    color: #b25900;
+    margin-top: 10px;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.pagination a {
+    text-decoration: none;
+    color: blue;
+    margin: 0 3px;
+}
+.pagination a:hover {
+    text-decoration: underline;
+}
+.pagination span {
+    color: red;
+    font-weight: bold;
+    margin: 0 3px;
+}
