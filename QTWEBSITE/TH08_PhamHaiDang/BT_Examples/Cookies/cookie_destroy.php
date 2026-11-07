@@ -1,5 +1,5 @@
 <?php
-    session_start()
+    setcookie("BATOCOM", "", time() - 3600)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    $_SESSION["favcolor"] = "red";
-    $_SESSION["favanimal"] = "cat";
-    echo "Session varialbles are set."
-    ?>
+<?php
+echo "Cookie 'user' is deleted.";
+?>
 </body>
 </html>
