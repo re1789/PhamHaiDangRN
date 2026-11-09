@@ -1,0 +1,7 @@
+1. Node.js, database: 
+- Tạo folder và mở folder vừa tạo bang VS code.
+- Tạo terminal mới và nhập: npm init. Ấn enter để cài đặt mặc định
+- Sửa package.json: type đổi giá trị thành module.
+- Sau đó cài them gói: npm install express -- save
+- Cài đặt express vào thư mục dự án thay vì tải phần mềm về.
+- Câu lệnh cài: npm install express
