@@ -8,7 +8,6 @@ if (isset($_POST["submit"])) {
     $_SESSION["tendangnhap"] = $_POST["tendangnhap"];
     $_SESSION["matkhau"] = $_POST["matkhau"];
     
-    // Chuyển sang trang kết quả
     header("Location: ketqua.php");
     exit();
 }
