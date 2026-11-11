@@ -1,8 +1,10 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "qlnhanvien");
+
 if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());
 }
+
 mysqli_set_charset($conn, "utf8");
 
 $sql_pb = "SELECT * FROM phongban";
@@ -57,7 +59,7 @@ $result_nv = mysqli_query($conn, $sql_nv);
     <table class="nv-table">
         <tr>
             <th>STT</th>
-            <th>MãNV</th>
+            <th>Mã NV</th>
             <th>Họ tên</th>
             <th>Phái</th>
             <th>Ngày sinh</th>

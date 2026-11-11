@@ -6,11 +6,9 @@
     <link rel="stylesheet" href="./style2.css">
 </head>
 <body>
-
     <div class="container">
         <?php
         $dir = "docs/";
-
         if (is_dir($dir)) {
             if ($dh = opendir($dir)) {
                 while (($file = readdir($dh)) !== false) {
@@ -40,6 +38,5 @@
         }
         ?>
     </div>
-
 </body>
 </html>

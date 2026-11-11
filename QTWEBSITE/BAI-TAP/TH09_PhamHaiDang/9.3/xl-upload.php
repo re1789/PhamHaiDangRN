@@ -47,7 +47,7 @@
                     echo "<img src='" . $target_file . "' alt='Hình ảnh' class='uploaded-img'>";
                     echo "<div class='success-msg'>Upload thành công</div>";
                 } else {
-                    echo "<div class='error-msg'>Lỗi trong quá trình lưu file!</div>";
+                    echo "<div class='error-msg'>Lỗi</div>";
                 }
             } else {
                 echo "<div class='error-msg'>" . $error_message . "</div>";
