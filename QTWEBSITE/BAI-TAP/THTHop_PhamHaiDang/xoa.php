@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $sql);
             <th>Ngày sinh</th>
             <th>Địa chỉ</th>
             <th>Phòng ban</th>
-            <th>link</th>
+            <th>Thao tác</th>
         </tr>
         <?php
         if ($result && mysqli_num_rows($result) > 0) {

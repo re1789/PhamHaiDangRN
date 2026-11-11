@@ -6,7 +6,7 @@ body {
 }
 
 .header-banner {
-    background-color: #0040ff;
+    background-color: #5d84fc;
     color: white;
     text-align: center;
     padding: 15px;
@@ -29,7 +29,7 @@ body {
 
 .main-title, .title {
     text-align: center;
-    color: #cc3300;
+    color: #b25f44;
     font-size: 24px;
     font-weight: bold;
     margin: 30px 0 20px 0;
@@ -139,7 +139,7 @@ table.nv-table a:hover {
 .bottom-nav,
 .action-container {
     text-align: center;
-    margin: 20px 0 60px 0;
+    margin: 20px 0 80px 0;
 }
 
 .action-buttons a, 
