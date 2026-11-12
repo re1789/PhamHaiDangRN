@@ -5,3 +5,7 @@
 - Sau đó cài them gói: npm install express -- save
 - Cài đặt express vào thư mục dự án thay vì tải phần mềm về.
 - Câu lệnh cài: npm install express
+
+2.Other:
+- Kiểm tra cổng có đang bị chiếm hay không, vào cmd chạy với quyền admin: netstat -ano | findstr :{cổng muốn sử dụng}
+- Xóa thứ đang chiếm dung cổng: taskkill /F /PID {nhập số PID(nằm sau LISTENING)}

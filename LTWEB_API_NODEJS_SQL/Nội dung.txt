@@ -2,3 +2,8 @@ Làm back-end, tạo cơ sở dữ liệu cho front-end truy cập
 
 Dự án là một container
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3307:3306 mysql
+
+app.get('/router', (req, res) => { ... })
+- "/router" đưa về folder routers
+- "(req, res)" đưa về folder controllers
+- "{ ... }" đưa về folder service
