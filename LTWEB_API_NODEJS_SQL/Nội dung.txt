@@ -7,3 +7,8 @@ app.get('/router', (req, res) => { ... })
 - "/router" đưa về folder routers
 - "(req, res)" đưa về folder controllers
 - "{ ... }" đưa về folder service
+
+server.js gọi về root.router.js
+root.router.js gọi về demo.router.js
+demo.router.js gọi về demo.controller.js
+demo.controller.js gọi về demo.service.js
