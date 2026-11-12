@@ -1,0 +1,17 @@
+Nếu đề là một màn hình đăng nhập với các danh mục sản phẩm thì xoá những thứ sau đây:
+- Xoá file detail.js đi
+- Trong file _layout.js, xoá dòng: <Stack.Screen name='product/detail' options={{headerTitle: 'Product Details', headerShown: true}}/>
+- Trong ProductCard.js, thay onPress{() => {onPress(product)}} thành onPress{onPress} ở dòng <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => {onPress(product)}}>
+- Xoá object product khỏi export default function ProductCard({item, categoryName, onPress, product(thứ cần xoá đây)})
+
+Nếu đề là một màn hình product list và một màn hình Product details(chi tiết sản phẩm khi nhấn một sản phẩm ở flat list):
+- Thì xoá file index.js của app đi
+
+Nếu đề có tất cả những thứ liệt kê trên ráng đổi style, tên gọi, hàm khai báo sao cho CON NGƯỜI nhất có thể và cầu nguyện đừng để bị phát hiện. Fare well.
+
+
+
+
+============================================================
+Xoá luôn file text khi làm xong, trừ khi muốn cảm giác mạnh
+============================================================

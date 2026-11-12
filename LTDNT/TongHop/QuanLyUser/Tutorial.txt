@@ -1,0 +1,1 @@
+Trong database API, không có role để có thể edit, nên chỉ làm được màn hình Add user thôi, nếu đề có thì cút
