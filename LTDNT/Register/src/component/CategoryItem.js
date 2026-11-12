@@ -23,6 +23,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 50,
         backgroundColor: 'white',
+        marginTop: 10,
+        marginBottom: 15
     },
     selectedContainet: {
         backgroundColor: 'orange'

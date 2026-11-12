@@ -29,7 +29,7 @@ export default function ProductCard({item, categoryName, onPress}) {
 const styles = StyleSheet.create({
   container:{
     padding: 10,
-    width: '100%',
+    maxWidth: '100%',
     height: 290,
     position: 'relative',
     borderRadius: 16,

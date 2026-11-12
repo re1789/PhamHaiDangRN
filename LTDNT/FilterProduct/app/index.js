@@ -3,15 +3,19 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet } from 'react-native'
 import { Dropdown } from 'react-native-element-dropdown'
 import ProductItem from '../component/ProductItem';
+import { useRouter } from 'expo-router';
 
 export default function Home() {
-    const [sp, setSp] = useState();
-    const [costF, setCostF] = useState();
-    const [costT, setCostT] = useState();
-    const [manhom, setManhom] = useState();
+    const [sp, setSp] = useState("");
+    const [costF, setCostF] = useState("");
+    const [costT, setCostT] = useState("");
+    const [manhom, setManhom] = useState("");
 
     const [category, setCategory] = useState([]);
     const [filterProduct, setFilterProduct] = useState([]);
+
+    const router = useRouter();
+
 
     // Lấy danh sách nhóm
     useEffect(() => {
@@ -31,17 +35,22 @@ export default function Home() {
     // Lấy sản phẩm theo điều kiện lọc
     const getFilterProduct = async () => {
         let filterCondition = ''
-        filterCondition = sp ? filterCondition + 'title=' + sp : filterCondition
-        filterCondition = costF ? filterCondition + '&price_min=' + costF : filterCondition
-        filterCondition = costT ? filterCondition + '&price_max=' + costT : filterCondition
-        filterCondition = manhom ? filterCondition + 'categoryID=' + manhom : filterCondition
+        if (sp) filterCondition += 'title=' + encodeURIComponent(sp);
+        if (costF) filterCondition += (filterCondition ? '&' : '') + 'price_min=' + costF;
+        if (costT) filterCondition += (filterCondition ? '&' : '') + 'price_max=' + costT;
+        if (manhom) filterCondition += (filterCondition ? '&' : '') + 'categoryId=' + manhom;
         // https://api.escuelajs.co/api/v1/products/?title=Generic&price_min-900&price_max=1000&id=1
         const response = await fetch('https://api.escuelajs.co/api/v1/products/?' + filterCondition)
         const data = await response.json();
         setFilterProduct(data);
     }
 
-    const onPress = () => { console.log ('Mở màn hình chi tiết') }
+    const onPress = (product) => {
+        router.push({
+            pathname: '/products/detail',
+            params: { id: String(product.id) }
+        })
+    }
 
   return (
     <View style = {styles.container}>
@@ -85,11 +94,11 @@ export default function Home() {
       <FlatList
         data={filterProduct}
         keyExtractor={(item) => {
-            return item.id
+            return item.id.toString()
         }}
         renderItem={({item}) => {
             return <ProductItem
-                product={item}
+                products={item}
                 onPress={onPress}
             />
         }}

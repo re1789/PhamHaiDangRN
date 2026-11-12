@@ -7,11 +7,11 @@ export default function _layout() {
   return (
     <Stack 
     screenOptions= {{
-      headerShown: true,
+      headerShown: false,
       headerTitleAlign: "center"
     }}
     >
-      <Stack.Screen name='product'options={{headerTitle: 'Product list'}}/>
+      <Stack.Screen name='product'options={{headerTitle: 'Product list', headerShown: true}}/>
     </Stack>
   )
 }

@@ -9,8 +9,8 @@ export default function _layout() {
         headerTitleAlign: 'center'
       }}
     >
-
         <Stack.Screen name='index' options={{headerTitle: 'Lọc sản phẩm'}}/>
+        <Stack.Screen name='products/detail' options={{headerTitle: 'Chi tiết sản phẩm'}}/>
     </Stack>
   )
 }

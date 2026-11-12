@@ -1,13 +1,13 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function ProductItem({product, onPress}) {
+export default function ProductItem({products, onPress}) {
   return (
-    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={onPress}>
-        <Image style = {styles.img} source={{uri: product.images[0]}}/>
+    <TouchableOpacity style = {styles.container} activeOpacity={0.7} onPress={() => onPress(products)}>
+        <Image style = {styles.img} source={{uri: products.images[0]}}/>
         <View style = {styles.txtA}>
-            <Text style = {styles.txt1}>{product.title}</Text>
-            <Text style = {styles.txt2}>${product.price}</Text>
+            <Text style = {styles.txt1}>{products.title}</Text>
+            <Text style = {styles.txt2}>${products.price}</Text>
         </View>
     </TouchableOpacity>
   )
