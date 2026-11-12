@@ -29,3 +29,6 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 |- Cập nhật file package.json: đổi giá trị của main thành expo-router/entry
 |- Tạo thư mục app(có thể xoá folder App) gồm các file làm màn hình chính: index.js, _layout.js(file điều hướng)
 |- Tạo một folder khác làm màn hình kế(ví dụ như products): index.js, [id].js(một id động)
+- Cài Carousel: 
+- npx expo install react-native-reanimated react-native-worklets reactnative-gesture-handler
+- npm install react-native-reanimated-carousel

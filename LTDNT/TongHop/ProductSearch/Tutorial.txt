@@ -1,0 +1,3 @@
+Cài Carousel: 
+- npx expo install react-native-reanimated react-native-worklets reactnative-gesture-handler
+- npm install react-native-reanimated-carousel

@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import {
-    ActivityIndicator,
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native'
+import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View} from 'react-native'
 import { useLocalSearchParams } from 'expo-router'
+import { Carousel } from 'react-native-reanimated-carousel'
 
 export default function ProductDetail() {
   const { id } = useLocalSearchParams()
@@ -16,6 +10,9 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+
+  const {width} = useWindowDimensions();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
       let active = true
@@ -71,28 +68,45 @@ export default function ProductDetail() {
   if (!product) {
       return <Text style={styles.center}>Không tìm thấy sản phẩm.</Text>
   }
+  const images = Array.isArray(product.images) ? product.images.filter( (url) => typeof url === 'string' && url.trim() !== '' ) : []
 
   const imageUrl = Array.isArray(product.images) ? product.images[0] : null
 
   return (
-      <ScrollView contentContainerStyle={styles.container}>
-          {imageUrl ? (
+    <ScrollView contentContainerStyle={styles.container}>
+      {images.length > 0 ? (
+        <View>
+          <Carousel
+            data={images}
+            style={{ width: width - 32, height: 280 }}
+            loop={false}
+            onSnapToItem={setActiveIndex}
+            renderItem={({ item }) => (
               <Image
-                source={{ uri: imageUrl }}
+                source={{ uri: item }}
                 style={styles.image}
                 resizeMode="cover"
               />
-          ) : (
-              <Text>Không có ảnh sản phẩm</Text>
-          )}
-
-          <Text style={styles.title}>{product.title}</Text>
-          <Text style={styles.price}>$ {product.price}</Text>
-          <Text style={styles.category}>
-              Danh mục: {product.category?.name ?? 'Chưa có danh mục'}
+            )}
+          />
+          <Text style={{ textAlign: 'right', marginTop: 4 }}>
+            {activeIndex + 1}/{images.length}
           </Text>
-          <Text style={styles.description}>{product.description}</Text>
-      </ScrollView>
+        </View>
+      ) : (
+        <Text>Không có ảnh sản phẩm</Text>
+      )}
+
+      <Text style={styles.title}>{product.title}</Text>
+      <Text style={styles.price}>$ {product.price}</Text>
+      <Text style={styles.category}>
+        Danh mục: {product.category?.name ?? 'Chưa có danh mục'}
+      </Text>
+      <Text style={styles.description}>{product.description}</Text>
+      <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => {}}>
+        <Text style={{ color: 'white'}}>Add to cart</Text>
+      </TouchableOpacity>
+    </ScrollView>
   )
 }
 
@@ -126,5 +140,14 @@ const styles = StyleSheet.create({
     },
     description: {
         lineHeight: 22
+    },
+    button: {
+        borderColor: 'blue',
+        borderRadius: 5,
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        backgroundColor: '#132ced',
     }
 })

@@ -12,7 +12,7 @@ export default function SearchResults({products, onPress}) {
       <FlatList
         data = {products}
         keyExtractor = {(item) => String(item.id)}
-        renderItem = {({item}) => <TouchableOpacity style = {styles.container_} onPress = {() => router.push("/(tabs)/details")}>
+        renderItem = {({item}) => <TouchableOpacity style = {styles.container_} onPress = {() => router.push({ pathname: '/details', params: { id: String(item.id) } })}>
             <Image style = {styles.img} source={{uri: item.images?.[0]}}/>
             <View style = {styles.txt_}>
                 <Text>{item.title}</Text>
