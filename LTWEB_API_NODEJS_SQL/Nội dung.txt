@@ -12,3 +12,9 @@ server.js gọi về root.router.js
 root.router.js gọi về demo.router.js
 demo.router.js gọi về demo.controller.js
 demo.controller.js gọi về demo.service.js
+
+
+Luna: Coffe, Hand mirror
+Moro: Baclk tea, Lip Balm
+Ilynav: scone, parasol
+Cecilia: Pudding, Pantry key
