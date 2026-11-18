@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <div class="footer-banner">
-        SVTH: Nguyễn Đăng Khoa - Khoa Công Nghệ Thông Tin.<br>
+        SVTH: Phạm Hải Đăng - Khoa Công Nghệ Thông Tin.<br>
         Trường Cao Đẳng kỹ Thuật Công Nghệ Đồng Nai - Số 8, Nguyễn Văn Hoa, Thống Nhất, Biên Hòa.
     </div>
 

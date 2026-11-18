@@ -1,5 +1,8 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "qlnhanvien");
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+$conn = mysqli_connect("sql113.byethost33.com", "b33_43470156", "123456789", "b33_43470156_qlnhanvien");
 if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());
 }
@@ -87,7 +90,7 @@ $result_nv = mysqli_query($conn, $sql_nv);
     </table>
 
     <div class="footer-banner">
-        SVTH: Nguyễn Đăng Khoa - Khoa Công Nghệ Thông Tin.<br>
+        SVTH: Phạm Hải Đăng - Khoa Công Nghệ Thông Tin.<br>
         Trường Cao Đẳng kỹ Thuật Công Nghệ Đồng Nai - Số 8, Nguyễn Văn Hoa, Thống Nhất, Biên Hòa.
     </div>
 

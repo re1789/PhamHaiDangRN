@@ -5,4 +5,5 @@ include "include/header.php";
 ?>
     <h1>Contact us</h1>
     <p>Gordon's Crown<br>London, United Kingdom</p>
+	<p>He he he</p>
 <?php include "include/footer.php"; ?>
