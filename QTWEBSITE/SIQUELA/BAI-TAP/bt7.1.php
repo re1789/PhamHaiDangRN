@@ -10,14 +10,12 @@
     <h2>THÔNG TIN CÁC SẢN PHẨM</h2>
 
     <?php
-    // Kết nối MySQL với tài khoản root, mật khẩu rỗng
     $conn = mysqli_connect("localhost", "root", "", "ql_ban_sua");
     if (!$conn) {
         die("Kết nối thất bại: " . mysqli_connect_error());
     }
     mysqli_set_charset($conn, "utf8");
 
-    // Đọc bảng sua
     $sql = "SELECT * FROM sua";
     $result = mysqli_query($conn, $sql);
     ?>
@@ -26,7 +24,7 @@
         <?php
         if (mysqli_num_rows($result) > 0) {
             $col_count = 0;
-            $cols_per_row = 5; // Mỗi dòng 5 cột
+            $cols_per_row = 5;
 
             while ($row = mysqli_fetch_assoc($result)) {
                 if ($col_count % $cols_per_row == 0) {
@@ -39,7 +37,6 @@
                 $ma_sua = $row['Ma_sua'];
 
                 echo "<td>";
-                // Tạo link truyền mã sữa sang trang chi tiết[cite: 8]
                 echo "<div class='product-name'><a href='bt7.2.php?ma_sua=" . urlencode($ma_sua) . "'>" . htmlspecialchars($row['Ten_sua']) . "</a></div>";
                 echo "<div class='product-info'>" . $trong_luong . " - " . $don_gia . "</div>";
                 echo "<div class='product-img'><img src='Image/" . htmlspecialchars($hinh) . "' alt='" . htmlspecialchars($row['Ten_sua']) . "'></div>";
@@ -51,8 +48,6 @@
                     echo "</tr>";
                 }
             }
-
-            // Điền các ô trống nếu số lượng sản phẩm không chia hết cho 5
             if ($col_count % $cols_per_row != 0) {
                 $remaining = $cols_per_row - ($col_count % $cols_per_row);
                 for ($i = 0; $i < $remaining; $i++) {

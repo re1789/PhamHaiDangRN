@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Thông Tin Khách Hàng</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <h2 align="center">THÔNG TIN KHÁCH HÀNG</h2>
-
     <?php
     $conn = mysqli_connect("localhost", "root", "", "ql_ban_sua");
 
-    // Kiểm tra kết nối
     if (!$conn) {
         die("Kết nối thất bại: " . mysqli_connect_error());
     }
@@ -52,7 +50,6 @@
     </table>
 
     <?php
-    // Đóng kết nối cơ sở dữ liệu
     mysqli_close($conn);
     ?>
 

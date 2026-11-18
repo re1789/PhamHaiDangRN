@@ -36,7 +36,7 @@
         
         <tr>
             <td class="img-cell">
-                <img src="Hinh/<?php echo htmlspecialchars($row['Hinh']); ?>" alt="<?php echo htmlspecialchars($row['Ten_sua']); ?>">
+                <img src="Image/<?php echo htmlspecialchars($row['Hinh']); ?>" alt="<?php echo htmlspecialchars($row['Ten_sua']); ?>">
             </td>
             <td class="info-cell">
                 <div class="section-title">Thành phần dinh dưỡng:</div>
@@ -61,7 +61,7 @@
     <?php
     } else {
         echo "<p align='center'>Không tìm thấy thông tin sản phẩm!</p>";
-        echo "<p align='center'><a href='list_dang_cot_co_link.php'>Quay về danh sách</a></p>";
+        echo "<p align='center'><a href='bt7.1.php'>Quay về danh sách</a></p>";
     }
 
     mysqli_close($conn);

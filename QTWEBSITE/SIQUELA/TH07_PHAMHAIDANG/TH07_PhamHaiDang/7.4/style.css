@@ -1,0 +1,77 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 10px;
+    background-color: #f4f4f4;
+}
+
+.title {
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.container-box {
+    width: 85%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+    border: 2px solid blue;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.form-group input[type="text"], .form-group select {
+    padding: 3px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+.btn {
+    padding: 4px 10px;
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    color: black;
+}
+
+.sv-table {
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.sv-table th {
+    background-color: #cccccc;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.sv-table td {
+    border: 1px solid black;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.pager {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.pager a {
+    color: blue;
+    text-decoration: underline;
+    margin: 0 3px;
+}
+
+.pager .active-page {
+    color: red;
+    font-weight: bold;
+}

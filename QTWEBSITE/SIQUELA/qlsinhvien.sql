@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `qlsinhvien` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `qlsinhvien` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `qlsinhvien`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
@@ -9,7 +9,7 @@ USE `qlsinhvien`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `qlsinhvien`;
 
 DROP TABLE IF EXISTS `ketqua`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ketqua` (
   `MaSV` varchar(5) NOT NULL,
   `MaMon` varchar(5) NOT NULL,
@@ -32,8 +32,8 @@ CREATE TABLE `ketqua` (
   KEY `MaMon` (`MaMon`),
   CONSTRAINT `ketqua_ibfk_1` FOREIGN KEY (`MaSV`) REFERENCES `sinhvien` (`MaSV`),
   CONSTRAINT `ketqua_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`),
-  CONSTRAINT `ketqua_chk_1` CHECK (((`diem` >= 0) and (`diem` <= 10)))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `ketqua_chk_1` CHECK (((`Diem` >= 0) and (`Diem` <= 10)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,13 +52,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `khoa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `khoa` (
   `MaKhoa` varchar(5) NOT NULL,
   `TenKhoa` varchar(50) NOT NULL,
   PRIMARY KEY (`MaKhoa`),
   UNIQUE KEY `TenKhoa_UNIQUE` (`TenKhoa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +77,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `lop`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lop` (
   `MaLop` varchar(5) NOT NULL,
   `TenLop` varchar(50) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE `lop` (
   PRIMARY KEY (`MaLop`),
   KEY `MaKhoa` (`MaKhoa`),
   CONSTRAINT `lop_ibfk_1` FOREIGN KEY (`MaKhoa`) REFERENCES `khoa` (`MaKhoa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,14 +104,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `monhoc`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `monhoc` (
   `MaMon` varchar(5) NOT NULL,
   `TenMon` varchar(45) NOT NULL,
   `SoTinChi` int NOT NULL,
   PRIMARY KEY (`MaMon`),
-  CONSTRAINT `monhoc_chk_1` CHECK (((`sotinchi` >= 0) and (`sotinchi` <= 12)))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `monhoc_chk_1` CHECK (((`SoTinChi` >= 0) and (`SoTinChi` <= 12)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sinhvien`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sinhvien` (
   `MaSV` varchar(5) NOT NULL,
   `Ho` varchar(50) NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE `sinhvien` (
   PRIMARY KEY (`MaSV`),
   KEY `MaLop` (`MaLop`),
   CONSTRAINT `sinhvien_ibfk_1` FOREIGN KEY (`MaLop`) REFERENCES `lop` (`MaLop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
