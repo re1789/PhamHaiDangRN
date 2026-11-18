@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4e8;
+}
+
+.container {
+    width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-left: 15px solid #949c16;
+    border-right: 15px solid #949c16;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.header h1 {
+    color: #cc0000;
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.banner img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.menu a {
+    display: inline-block;
+    background: linear-gradient(to bottom, #82c91e, #5c940d);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 22px;
+    margin: 0 4px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #4c7c0a;
+}
+
+.menu a:hover {
+    background: #4c7c0a;
+}
+
+.title {
+    text-align: center;
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+    text-transform: uppercase;
+}
+
+.content {
+    padding: 0 30px 30px;
+}
+
+.xe-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.xe-item img {
+    width: 220px;
+    height: 140px;
+    object-fit: contain;
+    margin-right: 30px;
+}
+
+.xe-info h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.xe-info p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+.form-table {
+    margin: 0 auto;
+    font-size: 13px;
+}
+
+.form-table td {
+    padding: 6px 10px;
+    vertical-align: top;
+}
+
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table select,
+.form-table textarea {
+    width: 220px;
+    padding: 4px;
+    border: 1px solid #999;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.data-table th {
+    background-color: #99d9ea;
+    border: 1px solid #5c940d;
+    padding: 8px;
+    text-align: center;
+}
+
+.data-table td {
+    border: 1px solid #5c940d;
+    padding: 8px;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-orange {
+    background-color: #ffa500;
+    border: 1px solid #cc8400;
+    padding: 6px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.footer {
+    background-color: #636333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
