@@ -1,20 +1,6 @@
-Làm back-end, tạo cơ sở dữ liệu cho front-end truy cập
+3 tầng
+service mỗi api là 1 hàm, mỗi hàm sẽ lấy dữ lieu một lần và nhiều lần
+controller mỗi hàm có cặp tham số req, res gọi hàm thông qua service
+router mỗi api là một lần gọi hàm, mỗi lần gọi hàm gồm 2 thành phần là đường dẫn và gọi hàm thông qua controller
 
-Dự án là một container
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3307:3306 mysql
-
-app.get('/router', (req, res) => { ... })
-- "/router" đưa về folder routers
-- "(req, res)" đưa về folder controllers
-- "{ ... }" đưa về folder service
-
-server.js gọi về root.router.js
-root.router.js gọi về demo.router.js
-demo.router.js gọi về demo.controller.js
-demo.controller.js gọi về demo.service.js
-
-
-Luna: Coffe, Hand mirror
-Moro: Baclk tea, Lip Balm
-Ilynav: scone, parasol
-Cecilia: Pudding, Pantry key
+Để lọc dữ liệu trên prisma ta dùng findMany ta truyền tham số object là where, trong where có giá trị là một object khác có các kiều kiện lọc

@@ -21,3 +21,12 @@ model Article {
 
   @@map("articles")
 }
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String? @db.VarChar(255)
+  fullName  String? @db.VarChar(255)
+  isDeleted Boolean @default(false)
+  roleId    Int?
+
+  @@map("users")
+}
